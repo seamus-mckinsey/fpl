@@ -59,20 +59,24 @@ coef_df.describe()
 # Creating coefficient weights here
 coef_df['goal_z-score'] = stats.zscore(coef_df['goals_scored'])
 coef_df['goal_coef'] = coef_df['goal_z-score'] * 0.35
+
 coef_df['assist_z-score'] = stats.zscore(coef_df['assists'])
 coef_df['assist_coef'] = coef_df['assist_z-score'] * 0.20
+
 coef_df['value-form_z-score'] = stats.zscore(coef_df['value_form'])
 coef_df['value-form_coef'] = coef_df['value-form_z-score'] * 0.05
+
 coef_df['form_z-score'] = stats.zscore(coef_df['form'])
 coef_df['form_coef'] = stats.zscore(coef_df['form_z-score']) * 0.10
+
 coef_df['bps_z-score'] = stats.zscore(coef_df['bps'])
 coef_df['bps_coef'] = stats.zscore(coef_df['bps_z-score']) * 0.05
+
 coef_df['ict_z-score'] = stats.zscore(coef_df['ict_index'])
 coef_df['ict_coef'] = stats.zscore(coef_df['ict_z-score']) * 0.15
 
 coef_df['total_coef'] = coef_df['goal_coef'] + coef_df['assist_coef'] + coef_df['value-form_coef'] + \
-coef_df['form_coef'] + coef_df['bps_coef'] + coef_df['ict_coef']
-
+    coef_df['form_coef'] + coef_df['bps_coef'] + coef_df['ict_coef']
 
 # With all the data
 
