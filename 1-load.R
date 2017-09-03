@@ -21,4 +21,16 @@ fpl_read <- function(player_number){
 }
 
 players_df <- tibble(player_number = 1:543) %>% 
-  mutate(past_seasons = map(player_number, fpl_read))
+  mutate(data = map(player_number, fpl_read))
+
+
+# wrangle -----------------------------------------------------------------
+
+fetch_stats <- function(index){
+  players_df$data[[index]][[1]]
+}
+
+past_seasons <- players_df %>% 
+  mutate(past_seasons = map(player_number, fetch_stats))
+
+         
