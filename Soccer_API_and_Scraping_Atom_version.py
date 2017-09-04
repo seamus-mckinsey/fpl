@@ -13,7 +13,9 @@ pd.options.display.max_rows = 999
 
 df = pd.DataFrame(data)
 
-df.head()
+df[df['web_name']=='Firmino']
+
+df.tail()
 
 
 df[df['second_name'] == 'Alonso']

@@ -9,6 +9,8 @@ r = requests.get('https://fantasy.premierleague.com/drf/element-summary/235')
 r.json().keys()
 
 data = r.json()['history_past']
+print(data)
+
 
 firmino_past = pd.DataFrame(data)
 
